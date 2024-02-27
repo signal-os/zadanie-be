@@ -1,73 +1,62 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# Interview Coding Task: User Retrieval System
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Overview
 
-## Description
+This task is designed to assess your ability to implement role-based access control in a Node.js application. Specifically, you will be enhancing an existing system to ensure that users can only be obtained if the requesting admin has the role of `SUPER_ADMIN`. You will also need to validate the admin's role and write appropriate tests to verify your implementation.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Prerequisites
 
-## Installation
+Before you begin, ensure you have the following installed on your system:
 
-```bash
-$ npm install
-```
+- Node.js (version 19)
+- Git
 
-## Running the app
+## Setup Instructions
 
-```bash
-# development
-$ npm run start
+1. **Clone the Repository:**
 
-# watch mode
-$ npm run start:dev
+   First, clone the repository containing the starter code to your local machine using Git:
 
-# production mode
-$ npm run start:prod
-```
+   ```bash
+   git clone https://github.com/signal-os/zadanie-be
+   cd zadanie-be
+   ```
 
-## Test
+2. **Install Dependencies:**
 
-```bash
-# unit tests
-$ npm run test
+   Navigate to the project directory and install the required Node.js dependencies:
 
-# e2e tests
-$ npm run test:e2e
+   ```bash
+   npm install
+   ```
 
-# test coverage
-$ npm run test:cov
-```
+3. **Run Tests:**
 
-## Support
+   The project uses Jest for testing. Tests can be launched with the following command:
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+   ```bash
+   node_modules/jest/bin/jest.js
+   ```
 
-## Stay in touch
+## Task Description
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Your task is to implement a feature within the system that retrieves users, subject to the following requirement:
 
-## License
+- **Role Validation:** Ensure that users can only be obtained if the requesting admin's role is `SUPER_ADMIN`.
 
-Nest is [MIT licensed](LICENSE).
+
+### What We're Looking For
+
+- **Correctness:** The implementation should correctly restrict access to user data based on the admin's role.
+- **Code Quality:** Your code should be clean, well-organized, and follow best practices.
+- **Error Handling:** The system should gracefully handle and report errors, especially for unauthorized access attempts.
+
+## Writing Tests
+
+You are expected to write comprehensive tests for your implementation using Jest. Your tests should cover the following scenarios at a minimum:
+
+- Retrieving users with an admin having the `SUPER_ADMIN` role.
+- Attempting to retrieve users with an admin lacking the `SUPER_ADMIN` role.
+
+
